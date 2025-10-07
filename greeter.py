@@ -1,7 +1,11 @@
-# generates personalized, time-sensitive greeting
 import datetime
 
+# generates personalized, time-sensitive greeting
 def get_greeting(name):
+    # handle cases where the name might be missing.
+    if not name or not name.strip():
+        name = "there"
+    
     # get the current hour to make the greeting time-sensitive.
     current_hour = datetime.datetime.now().hour
 
